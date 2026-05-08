@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.ReentrantLock; // Required to protect shared resources using mutual exclusion
+import java.util.concurrent.Semaphore; // Required to control access to the CPU
 
 // ANSI Color Codes for enhanced terminal output
 class Colors {
@@ -55,7 +57,7 @@ class SharedResources {
         }
     }
 
-}}
+}
 
     // Method to increment completed process counter
     public static void incrementCompletedProcess() {
